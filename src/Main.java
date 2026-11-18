@@ -12,5 +12,8 @@ void main() {
     Drink coffee = DrinkFactory.createDrink("coffee");
     System.out.println(tea.serve());
     System.out.println(coffee.serve());
+    // lesson 3 - builder
+    CustomDrinkBuilder customDrink =  new CustomDrinkBuilder.Builder("coffee").milk().sugar().build();
+    System.out.println(customDrink.toString());
 
 }
