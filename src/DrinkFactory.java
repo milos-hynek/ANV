@@ -3,7 +3,7 @@
 public class DrinkFactory {
     public static Drink createDrink(String type) {
         if (type == null) {
-            throw new IllegalArgumentException("Enter type of drink");
+            throw new IllegalArgumentException("Zadejte nápoj");
         }
 
         switch (type.trim().toLowerCase()) {
@@ -12,7 +12,7 @@ public class DrinkFactory {
             case "coffee":
                 return new Coffee();
             default:
-                throw new IllegalArgumentException("Unknown type of drink: " + type);
+                throw new IllegalArgumentException("Neznámý typ nápoje: " + type);
         }
     }
 }

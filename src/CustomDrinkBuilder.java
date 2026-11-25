@@ -20,9 +20,9 @@ public class CustomDrinkBuilder {
     @Override
     public String toString() {
         return DrinkFactory.createDrink(base).serve()
-                + (milk ? " +milk" : "")
-                + (sugar ? " +sugar" : "")
-                + (caramel ? "s +caramel" : "");
+                + (milk ? " S mlékem." : "")
+                + (sugar ? " S cukrem." : "")
+                + (caramel ? "S karamelem." : "");
     }
 
     // Vnořená třída Builder

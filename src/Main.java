@@ -13,7 +13,16 @@ void main() {
     System.out.println(tea.serve());
     System.out.println(coffee.serve());
     // lesson 3 - builder
-    CustomDrinkBuilder customDrink =  new CustomDrinkBuilder.Builder("coffee").milk().sugar().build();
+    CustomDrinkBuilder customDrink =  new CustomDrinkBuilder.Builder("coffee").milk().caramel().build();
+    System.out.println(customDrink.toString());
+    // lesson 4 - Observer
+    OrderSubject order = new OrderSubject();
+    order.addObserver(new EmployeeObserver("Barista"));
+    order.addObserver(new EmployeeObserver("Číšník"));
+    CustomDrinkBuilder customDrink2 =  new CustomDrinkBuilder.Builder("tea").sugar().build();
+    String msg = "Nová objednávka: "+customDrink2.toString() + " v pobočce "+CafeConfig.getInstance().getCafeName();
+    order.notifyAll(msg);
+    
     System.out.println(customDrink.toString());
 
 }
